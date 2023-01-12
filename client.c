@@ -12,7 +12,7 @@
 #define LENGTH 2048
 
 // Global variables
-volatile sig_atomic_t flag = 0;
+volatile sig_atomic_t flag = 0; //sit_atomic
 int sockfd = 0;
 char name[32];
 
@@ -100,6 +100,7 @@ int main(int argc, char **argv){
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
   server_addr.sin_family = AF_INET;
   server_addr.sin_addr.s_addr = inet_addr(ip);
+   //convert from host byte order to network byte order
   server_addr.sin_port = htons(port);
 
 
